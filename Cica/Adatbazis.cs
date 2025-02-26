@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,5 +75,55 @@ namespace Cica
         {
             return lista.OrderByDescending(x => x.Rendetlensegi_szint).FirstOrDefault();
         }
+
+        public bool CicaHozzaadas(string nev, string fajta, float suly, int rendetlensegiSzint)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO cicak (nev, fajta, suly, rendetlensegi_szint) VALUES (@nev, @fajta, @suly, @rendetlenseg)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@nev", nev);
+                        cmd.Parameters.AddWithValue("@fajta", fajta);
+                        cmd.Parameters.AddWithValue("@suly", suly);
+                        cmd.Parameters.AddWithValue("@rendetlenseg", rendetlensegiSzint);
+
+                        int rows = cmd.ExecuteNonQuery();
+                        return rows > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Hiba az adatbázisban: " + ex.Message);
+                return false;
+            }
+        }
+
+        public void CicaTorlese(int id)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "DELETE FROM `cicak` WHERE `cicak.id` = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        int rows = cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Hiba az adatbázisban: " + ex.Message);
+            }
+        }
+
     }
 }

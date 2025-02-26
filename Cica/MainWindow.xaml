@@ -9,16 +9,21 @@
     <Grid>
         <DataGrid x:Name="adatokDataGrid" HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="351" Margin="10,103,0,0"/>
         <Button x:Name="adatokBetolteseButton" Content="Adatok Betöltése" HorizontalAlignment="Left" Height="39" Margin="10,28,0,0" VerticalAlignment="Top" Width="112" Click="adatokBetolteseButton_Click"/>
-        <Button x:Name="f2" Content="Keresés" HorizontalAlignment="Left" Height="26" Margin="494,103,0,0" VerticalAlignment="Top" Width="71" Click="f2_Click"/>
+        <Button x:Name="f2" Content="Keresés" HorizontalAlignment="Left" Height="26" Margin="496,85,0,0" VerticalAlignment="Top" Width="71" Click="f2_Click"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="52" Margin="382,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92"/>
         <TextBlock x:Name="tBlock" HorizontalAlignment="Left" Margin="600,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="136" Width="170"/>
         <Button x:Name="nehez" Content="Legnehezebb cica" HorizontalAlignment="Left" Height="39" Margin="127,28,0,0" VerticalAlignment="Top" Width="127" Click="nehez_Click"/>
         <Button x:Name="rendetlen" Content="Legrendetlenebb cica" HorizontalAlignment="Left" Height="39" Margin="259,28,0,0" VerticalAlignment="Top" Width="127" Click="rendetlen_Click"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="448,170,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="82"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="382,237,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="81"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="383,274,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="81"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="382,307,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="81"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="375,170,0,0" TextWrapping="Wrap" Text="Név" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="nev" HorizontalAlignment="Left" Height="26" Margin="462,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="fajta" HorizontalAlignment="Left" Height="26" Margin="462,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="suuly" HorizontalAlignment="Left" Height="26" Margin="462,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="rendetlenseg" HorizontalAlignment="Left" Height="26" Margin="462,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="382,171,0,0" TextWrapping="Wrap" Text="Név" VerticalAlignment="Top" Width="56"/>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="382,212,0,0" TextWrapping="Wrap" Text="Fajta" VerticalAlignment="Top" Width="56"/>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="382,256,0,0" TextWrapping="Wrap" Text="Súly" VerticalAlignment="Top" Width="56"/>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="382,300,0,0" TextWrapping="Wrap" Text="Rendetlenségi szint" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="hozzaad" Content="Hozzáadás" HorizontalAlignment="Left" Height="26" Margin="452,344,0,0" VerticalAlignment="Top" Width="88" Click="hozzaad_Click"/>
+        <Button x:Name="torles" Content="Törlés Id alapján" HorizontalAlignment="Left" Height="26" Margin="496,129,0,0" VerticalAlignment="Top" Width="94" Click="torles_Click"/>
 
     </Grid>
 </Window>

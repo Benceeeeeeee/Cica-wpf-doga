@@ -54,5 +54,28 @@ namespace Cica
 
             tBlock.Text = $"{legrendetlenebb.Nev} {legrendetlenebb.Rendetlensegi_szint}";
         }
+
+        private void hozzaad_Click(object sender, RoutedEventArgs e)
+        {
+            string cicaNev = nev.Text;
+            string cicaFajta = fajta.Text;
+            float.TryParse(suuly.Text, out float suly);
+            int.TryParse(rendetlenseg.Text, out int rendetlensegiSzint);
+
+            bool siker = a.CicaHozzaadas(cicaNev, cicaFajta, suly, rendetlensegiSzint);
+            if (siker)
+            {
+                tBlock.Text = "Sikeresen hozzáadva";
+            }
+            else
+            {
+                tBlock.Text = "Hiba történt";
+            }
+        }
+
+        private void torles_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(textBox.Text);
+        }
     }
 }
